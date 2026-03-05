@@ -63,7 +63,7 @@ alpha = 1.0 / 137.035999084
 def kuramoto(theta, t, omega, K, N):
     dtheta = np.zeros(N)
     for i in range(N):
-        coupling = K * np.sum(np.sin(theta - theta[i])) / N
+        coupling = K * np.sum(np.sin(2 * np.pi * (theta - theta[i]))) / N
         dtheta[i] = omega[i] + coupling
     return dtheta
 
